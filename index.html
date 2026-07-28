@@ -220,14 +220,14 @@ table.matrix td.asset small{display:block;font-weight:500;color:var(--slate);fon
 .strand-tab{border:1.5px solid var(--line);background:var(--white);color:var(--teal-800);padding:9px 16px;border-radius:999px;font-weight:700;font-size:13px;cursor:pointer;transition:.25s}
 .strand-tab:hover{border-color:var(--teal-500);transform:translateY(-2px)}
 .strand-tab.active{background:var(--teal-800);color:#fff;border-color:var(--teal-800);box-shadow:var(--shadow)}
-#rec-why{font-size:13.5px;color:var(--slate);font-style:italic;margin-bottom:14px;max-width:96ch;line-height:1.45}
-.rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.rec{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:17px;border-left:5px solid var(--teal-600);display:none}
+#rec-why{font-size:13px;color:var(--slate);font-style:italic;margin-bottom:12px;line-height:1.4}
+.rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;flex:1;min-height:0;overflow-y:auto;align-content:start;padding-right:4px}
+.rec{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:15px;border-left:5px solid var(--teal-600);display:none}
 .rec.show{display:block;animation:pop .45s ease}
 @keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.rec .phase{font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.rec .phase{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
 .rec h3{margin:6px 0 8px;font-size:15px}
-.rec .addr{font-size:12.5px;color:var(--slate);line-height:1.5}
+.rec .addr{font-size:11.8px;color:var(--slate);line-height:1.5}
 .rec .addr b{color:var(--teal-800)}
 
 /* research */
@@ -592,26 +592,26 @@ const CVR_OVERALL="The resuscitation area and ambulance bay carry the highest ph
 
 /* Stage 4 — recommendations, from Group 3's Stage 4: five priority assets, each phased acute → extended → post-cordon */
 const STAGE4=[
- {asset:"Resuscitation area",tab:"Resus area",why:"Confirmed contamination site — must stay secured against unauthorised entry and undisturbed for forensic evidence.",phases:[
-   {ph:"Acute · 0–48h",t:"Hard cordon of barrier fencing around the resus bay with a supervised entry/exit point staffed by hospital security. Everyone logs in/out on a paper access reader — name, role, time, PPE level worn."},
-   {ph:"Extended cordon",t:"Fixed CCTV covering the access point that records, not just monitors. Signage at three points (corridor approach, ward door, entry point) in English plus the two most common patient languages, to stop accidental incursions."},
-   {ph:"Post-cordon · residual",t:"Re-entry is permitted only after the decontamination team provides written sign-off."}]},
- {asset:"Ambulance bay",tab:"Ambulance bay",why:"Main external access point and a confirmed exposure site — any vehicle or person that transited it could carry contamination beyond the original scene.",phases:[
-   {ph:"Acute · 0–48h",t:"Immediate closure to new ambulance traffic, with a temporary arrival bay on the opposite side of the site. The ambulance involved is physically isolated in its own taped-off holding bay."},
-   {ph:"Extended cordon",t:"Physical barriers at both ends of the bay to prevent vehicle access. A dedicated security guard post checks every incoming crew has been informed about the new routing."},
-   {ph:"Post-cordon · residual",t:"Once forensic clearance is given, reopen in stages — vehicle standing area → crew walkway → equipment stores — with each stage re-tested."}]},
- {asset:"Clinical staff",tab:"Clinical staff",why:"Staff treated the patients before nerve-agent exposure was suspected, without CBRNE-level PPE — their own contamination, and what they may have spread, is unconfirmed.",phases:[
-   {ph:"Acute · 0–48h",t:"Decontamination station (shower with dedicated waste-water containment) for every staff member who had contact with the patients, ambulance or resus area before they move elsewhere. Clothing and personal items bagged as controlled waste."},
-   {ph:"Extended cordon",t:"A marked 'clean line' at the boundary of the affected zone plus a manned checkpoint — no one crosses from the contaminated side without going through the decontamination station first."},
-   {ph:"Post-cordon · residual",t:"Staff who worked in affected areas are medically cleared individually before returning to unrestricted duties."}]},
- {asset:"Toxicology & lab results",tab:"Toxicology & lab",why:"A break in the physical chain of custody, or an unauthorised person accessing the samples, could compromise specimens and their results.",phases:[
-   {ph:"Acute · 0–48h",t:"Samples moved in sealed bags with a signed log at every handover (collection, transport, lab receipt). Only two named couriers are used for samples linked to this incident."},
-   {ph:"Extended cordon",t:"Storage in a locked, access-logged fridge separate from routine specimens, with a physical sign-in sheet for anyone retrieving a sample."},
-   {ph:"Post-cordon · residual",t:"Retained samples and paperwork archived under the same controlled access for the duration of the police investigation — not returned to routine storage."}]},
- {asset:"Patient Administration System",tab:"PAS",why:"Tracks admissions, exposed individuals and bed status through a high-profile incident — the physical terminals used to access it are an under-considered route into that risk.",phases:[
-   {ph:"Acute · 0–48h",t:"Physical access to PAS terminals in the affected wards is restricted to staff on a named list."},
-   {ph:"Extended cordon",t:"A manual paper backup log for admissions and exposed-patient tracking kept in parallel, locked in a cabinet, so a system outage is not a single point of failure."},
-   {ph:"Post-cordon · residual",t:"Terminals recovered from inside the former cordon are inspected, and replaced if they may be contaminated or unsafe."}]}
+ {asset:"Resuscitation Area",tab:"Resus Area",why:"confirmed contamination site that must stay secured against unauthorised entry and undisturbed for forensic evidence.",phases:[
+   {ph:"Acute phase (0-48h)",t:"physical hard cordon using barrier fencing around the resuscitation bay with a supervised entry/exit point staffed by hospital security. Anyone entering logs in/out a paper access reader with name, role, time address PPE level worn."},
+   {ph:"Extended cordon period",t:"fixed CCTV camera positioned to cover the access point that isn't just monitored but also records. Physical signage at 3 points (corridor approach, ward door, entry point) in English and the two next most common spoken languages by hospital patients to stop accidental incursions by staff or visitors"},
+   {ph:"Post cordon/residual",t:"before reopening, re-entry is permitted only after the decontamination team provides written sign-off"}]},
+ {asset:"Ambulance Bay",tab:"Ambulance Bay",why:"main external access point and a confirmed exposure site: any vehicle or person that transited it before the hazard was recognised could carry contamination beyond the original scene.",phases:[
+   {ph:"Acute phase (0-48h)",t:"immediate physical closure of the bay to new ambulance traffic, with a temporary separate arrival bay on the opposite side of the site. The ambulance involved is physically isolated in a taped-off holding bay of its own."},
+   {ph:"Extended cordon period",t:"physical barriers at both ends of the bay to prevent vehicle access. A dedicated security guard post at the entrance checks every incoming ambulance crew has been informed about the new routing."},
+   {ph:"Post cordon/residual",t:"once forensic clearance is given, reopen the bay in stages (vehicle standing area -> crew walkway -> equipment stores) with each stage re-tested."}]},
+ {asset:"Clinical Staff",tab:"Clinical Staff",why:"staff who treated the two patients before nerve agent exposure was suspected were not wearing CBRNE-level PPE, so their own contamination, and any exposure they may have already spread to other areas, is unconfirmed.",phases:[
+   {ph:"Acute phase (0-48h)",t:"physical decontamination station (shower unit with dedicated waste water containment) set up immediately for every staff member who had contact with the two patients, the ambulance, or the resuscitation area, before they are permitted to move elsewhere in the hospital. Their clothing and personal items are bagged as controlled waste."},
+   {ph:"Extended cordon period",t:"a physical \"clean line\" is marked at the boundary of the affected zone plus a manned checkpoint so no one crosses from the potentially contaminated side without going through the decontamination station first."},
+   {ph:"Post cordon/residual",t:"staff who worked in the affected areas are medically cleared individually before returning to unrestricted duties."}]},
+ {asset:"Toxicology and laboratory results",tab:"Toxicology",why:"a break in the physical chain of custody, or an unauthorised person accessing the samples, could affect specimens and their results.",phases:[
+   {ph:"Acute phase (0-48h)",t:"physical samples are moved in sealed bags with a signed log at every handover (collection, transport, lab receipt). Only two couriers are used for samples linked to this incident."},
+   {ph:"Extended cordon period",t:"sample storage is in a locked, access-logged fridge separate from routine hospital specimens, with a physical sign-in sheet for anyone retrieving a sample."},
+   {ph:"Post cordon/residual",t:"retained samples and paperwork are archived under the same controlled access arrangement for the duration of any police investigation and not returned to routine storage once the immediate clinical need has passed."}]},
+ {asset:"Patient Administration System",tab:"PAS",why:"the system is tracking admissions, exposed individuals, and bed status through a high-profile incident; loss or manipulation of it would compound an already-stretched site, and the physical terminals used to access it are an under-considered route into that risk.",phases:[
+   {ph:"Acute phase (0-48h)",t:"physical access to patient administration systems terminals in the affected wards is restricted to staff on a named list."},
+   {ph:"Extended cordon period",t:"a manual paper backup log for admissions and exposed-patient tracking is maintained in parallel, physically stored in a locked cabinet, so a system outage does not create a point of failure for tracking who has been exposed."},
+   {ph:"Post cordon/residual",t:"terminals recovered from inside the former cordon are inspected. If they may be contaminated or unsafe, they are replaced."}]}
 ];
 
 /* ---- build ---- */
