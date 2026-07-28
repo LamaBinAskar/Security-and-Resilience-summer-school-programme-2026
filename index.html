@@ -304,6 +304,13 @@ table.matrix td.asset small{display:block;font-weight:500;color:var(--slate);fon
 .icard .ic{font-size:30px;flex:0 0 auto;line-height:1}
 .icard h3{font-size:16px;margin-bottom:4px}
 .icard p{font-size:13px;line-height:1.45}
+/* Future — 6 measures grid */
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;flex:1;min-height:0;overflow-y:auto;align-content:start;margin-top:4px}
+.fcard{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--teal-600);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;transition:transform .3s}
+.fcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.fcard .ft{font-size:14px;font-weight:800;color:var(--teal-900);margin-bottom:6px;line-height:1.2}
+.fcard .fd{font-size:11.8px;color:var(--slate);line-height:1.5;flex:1}
+.fcard .fsrc{margin-top:9px;font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-700);background:var(--teal-050);border:1px solid var(--line);border-radius:999px;padding:3px 9px;align-self:flex-start}
 .sum-list{display:flex;flex-direction:column;gap:13px;margin-top:8px}
 .sumrow{display:flex;gap:16px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 20px;transition:transform .25s}
 .sumrow:hover{transform:translateX(6px);box-shadow:var(--shadow)}
@@ -491,12 +498,14 @@ table.matrix td.asset small{display:block;font-weight:500;color:var(--slate);fon
   <!-- 10 · FUTURE -->
   <section class="slide" id="s10">
     <div class="stage-head rv"><div class="stage-badge"><span class="s">FUTURE</span><span class="n">09</span></div>
-      <div><span class="kicker"><span class="pip"></span>Future · adaptability</span><h2>Retrofitting for the next incident</h2></div></div>
-    <div class="icon-grid rv d1">
-      <div class="icard"><div><h3>Decontamination-ready zones</h3><p>Isolable ventilation and wash-down space designed in, not improvised.</p></div></div>
-      <div class="icard"><div><h3>Segmentable IT &amp; CCTV</h3><p>Contain a cyber or CBRNE event without losing the whole system.</p></div></div>
-      <div class="icard"><div><h3>Cordon-friendly layout</h3><p>Alternative resus and handover routes that survive a sealed zone.</p></div></div>
-      <div class="icard"><div><h3>Site resilience</h3><p>Plan for the inner-city constraint: access, space, room to extend.</p></div></div>
+      <div><span class="kicker"><span class="pip"></span>Future adaptability</span><h2>Retrofitting for incidents</h2></div></div>
+    <div class="fgrid rv d1">
+      <div class="fcard"><div class="ft">Pre-planned CBRNE playbooks</div><div class="fd">Codified response protocols for chemical, biological, radiological, nuclear and cyber incidents, with clear roles, evacuation routes and isolation procedures.</div><span class="fsrc">gov</span></div>
+      <div class="fcard"><div class="ft">Dual-use clinical &amp; decontamination zones</div><div class="fd">Emergency and critical-care spaces designed to convert rapidly into isolation or wash-down areas, with integrated ventilation control and physical separation.</div><span class="fsrc">npsa</span></div>
+      <div class="fcard"><div class="ft">Segmented, fail-safe IT &amp; comms</div><div class="fd">Network and CCTV architecture built in secure segments so a compromise or outage in one zone does not take down the whole system, with manual fallbacks for critical records.</div><span class="fsrc">gov +1</span></div>
+      <div class="fcard"><div class="ft">Cordon-ready circulation &amp; access design</div><div class="fd">Entrances, corridors and handover routes planned so sealed zones can be created quickly while preserving safe alternative paths for ED, ambulance arrivals and clinical handovers.</div><span class="fsrc">npsa</span></div>
+      <div class="fcard"><div class="ft">Inter-agency incident command interface</div><div class="fd">A dedicated physical or virtual hub for real-time coordination between hospital leadership, police, fire and public health during major incidents.</div><span class="fsrc">police +1</span></div>
+      <div class="fcard"><div class="ft">Continuous training &amp; red-team exercises</div><div class="fd">Regular drills and simulation exercises to test incident plans, update layouts and refine procedures based on lessons learned.</div><span class="fsrc">gov +1</span></div>
     </div>
   </section>
 
@@ -524,7 +533,7 @@ table.matrix td.asset small{display:block;font-weight:500;color:var(--slate);fon
       </ul>
       <div class="learn">
         <div class="dl">Key learning</div>
-        <p>Contamination is invisible and persistent. The <b style="color:var(--accent)">site</b> — not only patients — is the risk, and a cordon can last weeks.</p>
+        <p>The hardest threat to defend is the one you <b style="color:var(--accent)">can't see</b>. An invisible agent, active for weeks, turns the <b style="color:var(--accent)">hospital itself</b> into the casualty — yet a hospital can't close. Secure the site, and you keep the whole service alive.</p>
         <div class="note">Full references &amp; resources — final slide.</div>
       </div>
     </div>
