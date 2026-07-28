@@ -269,6 +269,19 @@ table.matrix td.asset small{display:block;font-weight:500;color:var(--slate);fon
 .callout.red{border-left-color:var(--rag-red)}
 .callout h3{font-size:14.5px;margin-bottom:5px}
 .callout p{font-size:12.5px;line-height:1.45}
+/* Site — clear structured layout */
+.zrow{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--line)}
+.zrow:last-child{border-bottom:none}
+.zrow .zdot{width:12px;height:12px;border-radius:50%;margin-top:4px;flex:0 0 auto}
+.zrow.red .zdot{background:var(--rag-red)}
+.zrow.ok .zdot{background:var(--rag-green)}
+.zrow b{color:var(--teal-900);font-size:14.5px;font-weight:750}
+.zrow small{display:block;color:var(--slate);font-size:12px;margin-top:1px}
+.tstep{display:flex;gap:13px;align-items:flex-start;margin-bottom:14px}
+.tstep .tn{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--teal-700),var(--teal-900));color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.tstep p{font-size:14px;color:var(--slate);line-height:1.5;margin-top:3px}
+.site-note{margin-top:6px;background:var(--teal-050);border-radius:11px;padding:13px 15px;font-size:12.5px;color:var(--teal-800);line-height:1.5}
+.card h3{color:var(--teal-800)}
 
 /* cyber flow */
 .cyber-flow{display:grid;grid-template-columns:1fr 130px 1fr;gap:14px;align-items:center;flex:1;min-height:0;margin-top:6px}
@@ -418,21 +431,21 @@ table.matrix td.asset small{display:block;font-weight:500;color:var(--slate);fon
   <section class="slide" id="s6">
     <div class="stage-head rv"><div class="stage-badge"><span class="s">CONTENT</span><span class="n">05</span></div>
       <div><span class="kicker"><span class="pip"></span>Environment &amp; transport</span><h2>The site — access under cordon</h2></div></div>
-    <div class="site-wrap rv d1">
-      <div class="site" id="site">
-        <div class="road-top">Inner-city access road — limited routes</div>
-        <svg class="site-svg" id="site-svg"></svg>
-        <div class="zone cordon" style="left:6%;top:20%;width:24%">Ambulance bay<small>Cordoned</small></div>
-        <div class="zone cordon" style="left:6%;top:46%;width:24%">Resus area<small>Cordoned</small></div>
-        <div class="zone" style="left:40%;top:33%;width:24%">Emergency Dept<small>Running</small></div>
-        <div class="zone" style="left:40%;top:66%;width:24%">Wards<small>Running</small></div>
-        <div class="zone alt" style="left:71%;top:20%;width:24%">Alt. handover<small>Diverted</small></div>
-        <div class="zone" style="left:71%;top:60%;width:24%">Main entrance<small>Public / media</small></div>
-        <div class="ambdot" id="ambdot"></div>
+    <div class="two-col rv d1">
+      <div class="card">
+        <h3 style="margin-bottom:12px">Zones during the incident</h3>
+        <div class="zrow red"><span class="zdot"></span><div><b>Ambulance bay</b><small>Sealed by cordon — confirmed exposure site</small></div></div>
+        <div class="zrow red"><span class="zdot"></span><div><b>Resuscitation area</b><small>Sealed by cordon — confirmed exposure site</small></div></div>
+        <div class="zrow ok"><span class="zdot"></span><div><b>Emergency Department</b><small>Still running</small></div></div>
+        <div class="zrow ok"><span class="zdot"></span><div><b>Wards</b><small>Still running</small></div></div>
+        <div class="zrow ok"><span class="zdot"></span><div><b>Main entrance</b><small>Open — public &amp; media</small></div></div>
       </div>
-      <div class="callouts">
-        <div class="callout red"><h3>Cordon blocks the bay</h3><p>Ambulances divert to an alternative handover; internal flow must route around the sealed zone.</p></div>
-        <div class="callout"><h3>Old inner-city site</h3><p>Limited roads and little room to extend — unlike an edge-of-city hospital.</p></div>
+      <div class="card">
+        <h3 style="margin-bottom:14px">Access &amp; transport — rerouted</h3>
+        <div class="tstep"><span class="tn">1</span><p>The ambulance bay is sealed, so no new ambulances can arrive there.</p></div>
+        <div class="tstep"><span class="tn">2</span><p>Ambulances are diverted to a temporary handover point on the far side of the site.</p></div>
+        <div class="tstep"><span class="tn">3</span><p>Movement inside the hospital is routed around the sealed zone.</p></div>
+        <div class="site-note"><b>Inner-city site:</b> limited roads and little room to extend — unlike an edge-of-city hospital.</div>
       </div>
     </div>
   </section>
@@ -442,14 +455,14 @@ table.matrix td.asset small{display:block;font-weight:500;color:var(--slate);fon
     <div class="stage-head rv"><div class="stage-badge"><span class="s">CONTENT</span><span class="n">06</span></div>
       <div><span class="kicker"><span class="pip"></span>Cyber &amp; cyber-physical</span><h2>Key systems, inside to outside</h2></div></div>
     <div class="cyber-flow rv d1">
-      <div class="col-box"><h3>Internal systems</h3>
+      <div class="col-box"><h3>Inside the hospital</h3>
         <div class="sys redflag">CCTV<small>Exposure-route footage</small></div>
         <div class="sys redflag">Patient admin system<small>Admissions &amp; bed flow</small></div>
         <div class="sys redflag">Clinical records<small>Of exposed individuals</small></div>
         <div class="sys">Toxicology / lab systems<small>Confirms the agent</small></div>
       </div>
       <div class="gateway"><div class="g"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="9.5" rx="2"/><path d="M7.5 10.5V7a4.5 4.5 0 0 1 9 0v3.5"/></svg></div><div class="arrows">⇄</div><div class="gl">Network<br>boundary</div></div>
-      <div class="col-box"><h3>External partners</h3>
+      <div class="col-box"><h3>Outside partners</h3>
         <div class="sys">Police / CTSA<small>Investigation &amp; evidence</small></div>
         <div class="sys">Ambulance service<small>Handover &amp; fleet</small></div>
         <div class="sys">UKHSA / public health<small>Contact tracing</small></div>
@@ -740,13 +753,12 @@ function go(i){idx=Math.max(0,Math.min(N-1,i));track.style.transform=`translateX
   document.getElementById('pbar').style.width=(idx/(N-1)*100)+"%";
   if(idx===1)setTimeout(startStory,350);else stopStory();
   if(idx===2)setTimeout(drawPent,80);
-  if(idx===5)setTimeout(siteRoute,80);
   if(idx===0){amb.classList.remove('drive');ambHint.classList.remove('gone');}}
 window.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(idx+1);}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(idx-1);}if(e.key==='Home')go(0);if(e.key==='End')go(N-1);});
 
 const stage=document.getElementById('stage');
 function fit(){const s=Math.min(window.innerWidth/1280,window.innerHeight/720);stage.style.transform=`scale(${s>0&&isFinite(s)?s:1})`;}
-window.addEventListener('resize',()=>{fit();if(idx===2)drawPent();if(idx===5)siteRoute();});window.addEventListener('load',fit);
+window.addEventListener('resize',()=>{fit();if(idx===2)drawPent();});window.addEventListener('load',fit);
 fit();go(0);
 </script>
 </body>
