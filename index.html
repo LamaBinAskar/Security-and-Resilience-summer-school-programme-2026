@@ -201,6 +201,11 @@ table.matrix td.asset small{display:block;font-weight:500;color:var(--slate);fon
 .rag-key span{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--slate)}
 .rag-key i{width:15px;height:15px;border-radius:5px}
 .cat-note{font-style:italic;color:var(--slate);margin-left:auto;font-weight:500;font-size:11.5px}
+table.matrix th.vec{cursor:help;position:relative;text-decoration:underline dotted var(--teal-500) 2px;text-underline-offset:3px}
+.vtip{position:absolute;top:calc(100% + 9px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--teal-900);color:#fff;padding:11px 13px;border-radius:9px;font-size:11px;font-weight:500;width:210px;line-height:1.45;opacity:0;pointer-events:none;transition:.25s;z-index:30;box-shadow:var(--shadow);text-align:left;text-transform:none;letter-spacing:0}
+.vtip b{color:var(--accent);font-weight:800}
+.vtip em{display:block;margin-top:6px;color:#bfe6ee;font-style:italic}
+table.matrix th.vec:hover .vtip{opacity:1;transform:translateX(-50%)}
 
 /* cvr */
 .cvr-col{display:flex;flex-direction:column;gap:9px;min-height:0}
@@ -430,8 +435,14 @@ table.matrix td.asset small{display:block;font-weight:500;color:var(--slate);fon
     <div class="stage-head rv"><div class="stage-badge"><span class="s">CONTENT</span><span class="n">04</span></div>
       <div><span class="kicker"><span class="pip"></span>Threats · the RAG matrix</span><h2>What threatens each asset</h2></div></div>
     <div class="cat-tabs rv d1" id="threat-tabs"></div>
-    <div class="matrix-wrap rv d2"><table class="matrix"><thead><tr><th class="asset">Asset</th><th>Physical</th><th>Biological</th><th>Environmental</th><th>Cyber</th><th>Social</th></tr></thead><tbody id="matrix-body"></tbody></table></div>
-    <div class="rag-key rv d3"><span><i style="background:var(--rag-red)"></i>Red — high</span><span><i style="background:var(--rag-amber)"></i>Amber — moderate</span><span><i style="background:var(--rag-green)"></i>Green — low</span><span class="cat-note">Table: our Stage 2 RAG — hover a cell for the reason.</span></div>
+    <div class="matrix-wrap rv d2"><table class="matrix"><thead><tr><th class="asset">Asset</th>
+<th class="vec">Physical<span class="vtip"><b>Physical</b> — access, security &amp; integrity of spaces, people and objects.<em>Primary vector here: a police cordon seals key areas and access must be tightly controlled.</em></span></th>
+<th class="vec">Biological<span class="vtip"><b>Biological</b> — health effects on those exposed.<em>The nerve agent injures the body and spreads to responders — casualties and secondary exposure.</em></span></th>
+<th class="vec">Environmental<span class="vtip"><b>Environmental</b> — persistence and contamination of surfaces, objects and the area.<em>The agent stays active for weeks and is invisible until specialist testing clears it.</em></span></th>
+<th class="vec">Cyber<span class="vtip"><b>Cyber</b> — digital systems, data and connected devices.<em>A high-profile incident makes records, CCTV and the PAS credible targets — rated on its own pathway, not defaulted to green.</em></span></th>
+<th class="vec">Social<span class="vtip"><b>Social</b> — public alarm, media pressure and misinformation.<em>Sustained media presence and public anxiety, plus disrupted access to care.</em></span></th>
+</tr></thead><tbody id="matrix-body"></tbody></table></div>
+    <div class="rag-key rv d3"><span><i style="background:var(--rag-red)"></i>Red — high</span><span><i style="background:var(--rag-amber)"></i>Amber — moderate</span><span><i style="background:var(--rag-green)"></i>Green — low</span><span class="cat-note">Hover a column header for what each vector means · hover a cell for its rating.</span></div>
   </section>
 
   <!-- 6 · ENVIRONMENT & TRANSPORT -->
