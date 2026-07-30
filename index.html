@@ -309,13 +309,12 @@ table.matrix th.vec:hover .vtip{opacity:1;transform:translateX(-50%)}
 .icard .ic{font-size:30px;flex:0 0 auto;line-height:1}
 .icard h3{font-size:16px;margin-bottom:4px}
 .icard p{font-size:13px;line-height:1.45}
-/* Future — 6 measures grid */
-.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;flex:1;min-height:0;overflow-y:auto;align-content:start;margin-top:4px}
-.fcard{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--teal-600);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;transition:transform .3s}
-.fcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.fcard .ft{font-size:14px;font-weight:800;color:var(--teal-900);margin-bottom:6px;line-height:1.2}
-.fcard .fd{font-size:11.8px;color:var(--slate);line-height:1.5;flex:1}
-.fcard .fsrc{margin-top:9px;font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-700);background:var(--teal-050);border:1px solid var(--line);border-radius:999px;padding:3px 9px;align-self:flex-start}
+/* Future — 6 measures grid (2 columns, large & full-height) */
+.fgrid{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:1fr;gap:14px 16px;flex:1;min-height:0;margin-top:10px}
+.fcard{background:var(--white);border:1px solid var(--line);border-left:6px solid var(--teal-600);border-radius:14px;padding:16px 22px;display:flex;flex-direction:column;justify-content:center;transition:transform .3s}
+.fcard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.fcard .ft{font-size:17px;font-weight:800;color:var(--teal-900);margin-bottom:7px;line-height:1.2}
+.fcard .fd{font-size:14px;color:var(--slate);line-height:1.55}
 .sum-list{display:flex;flex-direction:column;gap:13px;margin-top:8px}
 .sumrow{display:flex;gap:16px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 20px;transition:transform .25s}
 .sumrow:hover{transform:translateX(6px);box-shadow:var(--shadow)}
