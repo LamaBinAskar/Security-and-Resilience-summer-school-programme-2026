@@ -612,7 +612,7 @@ const ASSETS=[
  {id:"pas",cat:"systems",name:"Patient administration system",sub:"Admissions & bed flow",fn:"Holds admission records, tracks exposed individuals, and manages flow around the cordon.",dep:"IT infrastructure · accurate real-time data entry",ext:"Clinical teams; bed management; hospital operations",rag:{ph:"G",bi:"G",en:"G",cy:"R",so:"A"},why:{cy:"Disruption would compound an already-stretched site; raised profile in a terror-linked incident.",so:"Operational sensitivity of patient-flow data.",bi:"Digital system — no physical exposure pathway.",en:"Digital system — no physical exposure pathway."}}
 ];
 
-/* Stage 3 — CVR, from Group 3's Stage 3 document (High/Medium; Difficult/Moderate) */
+/* Stage 3 — CVR, from Group 3's Stage 3 document (High/Medium) */
 const CVR=[
  {n:"Clinical staff",s:"People · frontline capacity",c:"High",v:"Medium",r:"High",j:"Essential for treating exposed patients and keeping hospital services running. They may have been exposed before the hazard was identified, and replacing trained staff who are quarantined or unwell would be difficult."},
  {n:"Resuscitation area",s:"Physical · confirmed contamination",c:"High",v:"High",r:"High",j:"Essential for emergency treatment but a confirmed contamination site. It cannot safely reopen until decontamination and specialist testing confirm the area is clear."},
@@ -714,7 +714,7 @@ function siteRoute(){const W=site.clientWidth,H=site.clientHeight;
 
 /* CVR */
 const cvrCol=document.getElementById('cvr-list');const cvrDetail=document.getElementById('cvr-detail');
-function lvlC(x){return (x==='High'||x==='Difficult')?'R':(x==='Medium'||x==='Moderate')?'A':'G';}
+function lvlC(x){return x==='High'?'R':x==='Medium'?'A':'G';}
 CVR.forEach((a,i)=>{const row=document.createElement('div');row.className='cvr-row2';row.dataset.i=i;
   row.innerHTML=`<div class="name">${a.n}<small>${a.s}</small></div><div class="pills">
     <span class="pill ${lvlC(a.c)}">Criticality<b>${a.c}</b></span>
